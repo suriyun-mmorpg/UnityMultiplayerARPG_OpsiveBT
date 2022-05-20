@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432ed403b30d5804bb2b9150a7426abb, type: 3}
+  m_Name: Map001_OpsiveBT
+  m_EditorClassIdentifier: 
+  id: Map001
+  defaultTitle: 
+  languageSpecificTitles: []
+  defaultDescription: 
+  languageSpecificDescriptions: []
+  category: 
+  icon: {fileID: 0}
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 65888eb1258bd9442a6b05c07d1e2e1f, type: 3}
+    sceneName: Map001_OpsiveBT
+  startPosition: {x: 0, y: 0, z: 10}
+  startRotation: {x: 0, y: 0, z: 0}
+  deadY: -100
+  playerDeadDropsEquipWeapons: 0
+  playerDeadDropsEquipItems: 0
+  playerDeadDropsNonEquipItems: 0
+  minimapSprite: {fileID: 21300000, guid: 17ed8270f16b4ef45894e2dfb4008f78, type: 3}
+  minimapPosition: {x: -0.1605835, y: 0, z: -0.1605835}
+  minimapBoundsWidth: 1403.1687
+  minimapBoundsLength: 1403.1687
+  minimapOrthographicSize: 701.58435
+  canReturnToSavePoint: 0
+  pvpMode: 1
+  respawnPointsByCondition: []
