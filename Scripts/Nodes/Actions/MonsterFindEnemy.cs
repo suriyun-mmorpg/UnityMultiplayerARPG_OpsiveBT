@@ -51,7 +51,7 @@ namespace MultiplayerARPG.OpsiveBT
                 {
                     // Find enemy around summoner
                     enemies.Value.AddRange(Entity.FindAliveCharacters<BaseCharacterEntity>(
-                        Entity.Summoner.CacheTransform.position,
+                        Entity.Summoner.EntityTransform.position,
                         CharacterDatabase.SummonedVisualRange,
                         false,
                         true, 

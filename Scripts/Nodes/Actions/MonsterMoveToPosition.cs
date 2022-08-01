@@ -19,7 +19,7 @@ namespace MultiplayerARPG.OpsiveBT
 
         public override TaskStatus OnUpdate()
         {
-            if (Vector3.Distance(Entity.CacheTransform.position, moveToPosition.Value) < tolerance)
+            if (Vector3.Distance(Entity.EntityTransform.position, moveToPosition.Value) < tolerance)
             {
                 return TaskStatus.Success;
             }
