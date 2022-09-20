@@ -47,23 +47,23 @@ namespace MultiplayerARPG.OpsiveBT
 
                 // If no target enemy or target enemy is dead, Find nearby character by layer mask
                 enemies.Value.Clear();
-                if (Entity.IsSummoned)
+                if (Entity.IsSummonedAndSummonerExisted)
                 {
                     // Find enemy around summoner
                     enemies.Value.AddRange(Entity.FindAliveCharacters<BaseCharacterEntity>(
                         Entity.Summoner.EntityTransform.position,
                         CharacterDatabase.SummonedVisualRange,
-                        false,
-                        true, 
-                        Entity.IsSummoned));
+                        false, /* Don't find an allies */
+                        true,  /* Always find an enemies */
+                        true));
                 }
                 else
                 {
                     enemies.Value.AddRange(Entity.FindAliveCharacters<BaseCharacterEntity>(
                         CharacterDatabase.VisualRange,
-                        false, 
-                        true, 
-                        Entity.IsSummoned));
+                        false, /* Don't find an allies */
+                        true,  /* Always find an enemies */
+                        false  /* Don't find an neutral */));
                 }
 
                 for (int i = enemies.Value.Count - 1; i >= 0; --i)
