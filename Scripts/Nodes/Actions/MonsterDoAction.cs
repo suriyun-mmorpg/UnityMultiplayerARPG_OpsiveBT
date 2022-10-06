@@ -54,7 +54,8 @@ namespace MultiplayerARPG.OpsiveBT
             else
             {
                 // Attack when no queue skill
-                Entity.Attack(false);
+                bool isLeftHand = false;
+                Entity.Attack(ref isLeftHand);
             }
 
             didAction = true;
