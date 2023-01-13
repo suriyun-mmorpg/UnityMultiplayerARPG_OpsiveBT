@@ -31,7 +31,7 @@ namespace MultiplayerARPG.OpsiveBT
             if (!Entity.IsPlayingActionAnimation())
             {
                 BaseSkill tempQueueSkill;
-                short tempQueueSkillLevel;
+                int tempQueueSkillLevel;
                 // Random action state to do next time
                 if (CharacterDatabase.RandomSkill(Entity, out tempQueueSkill, out tempQueueSkillLevel) && queueSkill.Value != null)
                 {
