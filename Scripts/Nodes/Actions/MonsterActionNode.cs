@@ -30,7 +30,7 @@ namespace MultiplayerARPG.OpsiveBT
 
         protected float GetAttackDistance()
         {
-            return queueSkill.Value != null && queueSkill.Value.IsAttack ? queueSkill.Value.GetCastDistance(Entity, (short)queueSkillLevel.Value, isLeftHandAttacking.Value) :
+            return queueSkill.Value != null && queueSkill.Value.IsAttack ? queueSkill.Value.GetCastDistance(Entity, queueSkillLevel.Value, isLeftHandAttacking.Value) :
                 Entity.GetAttackDistance(isLeftHandAttacking.Value);
         }
 
