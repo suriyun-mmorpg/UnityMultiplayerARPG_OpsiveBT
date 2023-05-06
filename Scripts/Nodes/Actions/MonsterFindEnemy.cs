@@ -32,27 +32,10 @@ namespace MultiplayerARPG.OpsiveBT
         {
             if (!Entity.TryGetTargetEntity(out IDamageableEntity targetEntity) || targetEntity.Entity == Entity.Entity || targetEntity.IsDead() || !targetEntity.CanReceiveDamageFrom(Entity.GetInfo()))
             {
-                DamageableEntity enemy;
                 bool isSummonedAndSummonerExisted = Entity.IsSummonedAndSummonerExisted;
                 // Find one enemy from previously found list
-                for (int i = enemies.Value.Count - 1; i >= 0; --i)
-                {
-                    enemy = enemies.Value[i];
-                    enemies.Value.RemoveAt(i);
-                    if (enemy == null || enemy.Entity == Entity || enemy.IsDead() || enemy.CanReceiveDamageFrom(Entity.GetInfo()))
-                    {
-                        // If enemy is null or cannot receive damage from monster, skip it
-                        continue;
-                    }
-                    if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.Summoner.Id.Equals(buildingEntity.CreatorId))
-                    {
-                        // If building was built by summoner, skip it
-                        continue;
-                    }
-                    // Found target, attack it
-                    Entity.SetAttackTarget(enemy);
+                if (FindOneEnemyFromList(isSummonedAndSummonerExisted))
                     return true;
-                }
 
                 // If no target enemy or target enemy is dead, Find nearby character by layer mask
                 enemies.Value.Clear();
@@ -79,28 +62,36 @@ namespace MultiplayerARPG.OpsiveBT
                         false, /* Don't find an neutral */
                         overlapMask));
                 }
-
-                for (int i = enemies.Value.Count - 1; i >= 0; --i)
-                {
-                    enemy = enemies.Value[i];
-                    enemies.Value.RemoveAt(i);
-                    if (enemy == null || enemy.Entity == Entity || enemy.IsDead() || enemy.CanReceiveDamageFrom(Entity.GetInfo()))
-                    {
-                        // If enemy is null or cannot receive damage from monster, skip it
-                        continue;
-                    }
-                    if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.Summoner.Id.Equals(buildingEntity.CreatorId))
-                    {
-                        // If building was built by summoner, skip it
-                        continue;
-                    }
-                    // Found target, attack it
-                    Entity.SetAttackTarget(enemy);
+                // Find one enemy from a found list
+                if (FindOneEnemyFromList(isSummonedAndSummonerExisted))
                     return true;
-                }
             }
 
             return true;
+        }
+
+        private bool FindOneEnemyFromList(bool isSummonedAndSummonerExisted)
+        {
+            DamageableEntity enemy;
+            for (int i = enemies.Value.Count - 1; i >= 0; --i)
+            {
+                enemy = enemies.Value[i];
+                enemies.Value.RemoveAt(i);
+                if (enemy == null || enemy.Entity == Entity || enemy.IsDead() || !enemy.CanReceiveDamageFrom(Entity.GetInfo()))
+                {
+                    // If enemy is null or cannot receive damage from monster, skip it
+                    continue;
+                }
+                if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.Summoner.Id == buildingEntity.CreatorId)
+                {
+                    // If building was built by summoner, skip it
+                    continue;
+                }
+                // Found target, attack it
+                Entity.SetAttackTarget(enemy);
+                return true;
+            }
+            return false;
         }
     }
 }
