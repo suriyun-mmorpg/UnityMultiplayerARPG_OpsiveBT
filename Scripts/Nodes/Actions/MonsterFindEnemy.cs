@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using BehaviorDesigner.Runtime.Tasks;
 
 namespace MultiplayerARPG.OpsiveBT
@@ -9,6 +8,11 @@ namespace MultiplayerARPG.OpsiveBT
         public bool isAttackBuilding = false;
 
         public override void OnStart()
+        {
+
+        }
+
+        public override void OnEnd()
         {
 
         }
@@ -26,82 +30,72 @@ namespace MultiplayerARPG.OpsiveBT
         /// <returns></returns>
         public bool FindEnemyFunc()
         {
-            IDamageableEntity targetEntity;
-            if (!Entity.TryGetTargetEntity(out targetEntity) || targetEntity.Entity == Entity.Entity ||
-                 targetEntity.IsDead() || !targetEntity.CanReceiveDamageFrom(Entity.GetInfo()))
+            if (!Entity.TryGetTargetEntity(out IDamageableEntity targetEntity) || targetEntity.Entity == Entity.Entity || targetEntity.IsDead() || !targetEntity.CanReceiveDamageFrom(Entity.GetInfo()))
             {
-                BaseCharacterEntity enemy;
-
+                DamageableEntity enemy;
+                bool isSummonedAndSummonerExisted = Entity.IsSummonedAndSummonerExisted;
+                // Find one enemy from previously found list
                 for (int i = enemies.Value.Count - 1; i >= 0; --i)
                 {
                     enemy = enemies.Value[i];
                     enemies.Value.RemoveAt(i);
-                    if (enemy != null && enemy.Entity != Entity.Entity && !enemy.IsDead() &&
-                        enemy.CanReceiveDamageFrom(Entity.GetInfo()))
+                    if (enemy == null || enemy.Entity == Entity || enemy.IsDead() || enemy.CanReceiveDamageFrom(Entity.GetInfo()))
                     {
-                        // Found target, attack it
-                        Entity.SetAttackTarget(enemy);
-                        return true;
+                        // If enemy is null or cannot receive damage from monster, skip it
+                        continue;
                     }
+                    if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.Summoner.Id.Equals(buildingEntity.CreatorId))
+                    {
+                        // If building was built by summoner, skip it
+                        continue;
+                    }
+                    // Found target, attack it
+                    Entity.SetAttackTarget(enemy);
+                    return true;
                 }
 
                 // If no target enemy or target enemy is dead, Find nearby character by layer mask
                 enemies.Value.Clear();
-                if (Entity.IsSummonedAndSummonerExisted)
+                int overlapMask = CurrentGameInstance.playerLayer.Mask | CurrentGameInstance.monsterLayer.Mask;
+                if (isAttackBuilding)
+                    overlapMask |= CurrentGameInstance.buildingLayer.Mask;
+                if (isSummonedAndSummonerExisted)
                 {
                     // Find enemy around summoner
-                    enemies.Value.AddRange(Entity.FindAliveCharacters<BaseCharacterEntity>(
+                    enemies.Value.AddRange(Entity.FindAliveEntities<DamageableEntity>(
                         Entity.Summoner.EntityTransform.position,
                         CharacterDatabase.SummonedVisualRange,
                         false, /* Don't find an allies */
-                        true,  /* Always find an enemies */
-                        true));
+                        true,  /* Find an enemies */
+                        true,  /* Find an neutral */
+                        overlapMask));
                 }
                 else
                 {
-                    enemies.Value.AddRange(Entity.FindAliveCharacters<BaseCharacterEntity>(
+                    enemies.Value.AddRange(Entity.FindAliveEntities<DamageableEntity>(
                         CharacterDatabase.VisualRange,
                         false, /* Don't find an allies */
-                        true,  /* Always find an enemies */
-                        false  /* Don't find an neutral */));
+                        true,  /* Find an enemies */
+                        false, /* Don't find an neutral */
+                        overlapMask));
                 }
 
                 for (int i = enemies.Value.Count - 1; i >= 0; --i)
                 {
                     enemy = enemies.Value[i];
                     enemies.Value.RemoveAt(i);
-                    if (enemy != null && enemy.Entity != Entity.Entity && !enemy.IsDead() &&
-                        enemy.CanReceiveDamageFrom(Entity.GetInfo()))
+                    if (enemy == null || enemy.Entity == Entity || enemy.IsDead() || enemy.CanReceiveDamageFrom(Entity.GetInfo()))
                     {
-                        // Found target, attack it
-                        Entity.SetAttackTarget(enemy);
-                        return true;
-                    }
-                }
-
-                if (!isAttackBuilding)
-                    return false;
-                // Find building to attack
-                List<BuildingEntity> buildingEntities = Entity.FindAliveDamageableEntities<BuildingEntity>(CharacterDatabase.VisualRange, CurrentGameInstance.buildingLayer.Mask);
-                foreach (BuildingEntity buildingEntity in buildingEntities)
-                {
-                    // Attack target settings
-                    if (buildingEntity == null || buildingEntity.Entity == Entity.Entity ||
-                        buildingEntity.IsDead() || !buildingEntity.CanReceiveDamageFrom(Entity.GetInfo()))
-                    {
-                        // If building is null or cannot receive damage from monster, skip it
+                        // If enemy is null or cannot receive damage from monster, skip it
                         continue;
                     }
-                    if (Entity.Summoner != null)
+                    if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.Summoner.Id.Equals(buildingEntity.CreatorId))
                     {
-                        if (Entity.Summoner.Id.Equals(buildingEntity.CreatorId))
-                        {
-                            // If building was built by summoner, skip it
-                            continue;
-                        }
+                        // If building was built by summoner, skip it
+                        continue;
                     }
                     // Found target, attack it
-                    Entity.SetAttackTarget(buildingEntity);
+                    Entity.SetAttackTarget(enemy);
                     return true;
                 }
             }

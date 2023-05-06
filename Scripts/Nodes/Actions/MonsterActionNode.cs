@@ -7,7 +7,7 @@ namespace MultiplayerARPG.OpsiveBT
     public abstract class MonsterActionNode : Action
     {
         public SharedMonsterActivityComponentOpsiveBT activityComp;
-        public SharedBaseCharacterEntityList enemies;
+        public SharedDamageableEntityList enemies;
         public SharedBaseSkill queueSkill;
         public SharedInt queueSkillLevel;
         public SharedBool isLeftHandAttacking;
