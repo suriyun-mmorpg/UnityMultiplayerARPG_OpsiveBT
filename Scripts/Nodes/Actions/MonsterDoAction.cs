@@ -42,7 +42,7 @@ namespace MultiplayerARPG.OpsiveBT
             if (Entity.IsPlayingActionAnimation())
                 return TaskStatus.Running;
 
-            if (queueSkill.Value != null && Entity.IndexOfSkillUsage(queueSkill.Value.DataId, SkillUsageType.Skill) < 0)
+            if (queueSkill.Value != null && Entity.IndexOfSkillUsage(SkillUsageType.Skill, queueSkill.Value.DataId) < 0)
             {
                 // Use skill when there is queue skill or randomed skill that can be used
                 Entity.UseSkill(queueSkill.Value.DataId, false, 0, new AimPosition()

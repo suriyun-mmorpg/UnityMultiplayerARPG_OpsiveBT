@@ -38,7 +38,7 @@ namespace MultiplayerARPG.OpsiveBT
                     queueSkill.Value = tempQueueSkill;
                     queueSkillLevel.Value = tempQueueSkillLevel;
                     // Cooling down
-                    if (Entity.IndexOfSkillUsage(queueSkill.Value.DataId, SkillUsageType.Skill) >= 0)
+                    if (Entity.IndexOfSkillUsage(SkillUsageType.Skill, queueSkill.Value.DataId) >= 0)
                     {
                         queueSkill.Value = null;
                         queueSkillLevel.Value = 0;
