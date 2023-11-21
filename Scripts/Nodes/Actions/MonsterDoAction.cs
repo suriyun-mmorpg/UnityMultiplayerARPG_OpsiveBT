@@ -48,7 +48,7 @@ namespace MultiplayerARPG.OpsiveBT
                 Entity.UseSkill(queueSkill.Value.DataId, false, 0, new AimPosition()
                 {
                     type = AimPositionType.Position,
-                    position = tempTargetEnemy.OpponentAimTransform.position,
+                    position = queueSkill.Value.GetDefaultAttackAimPosition(Entity, queueSkillLevel.Value, tempIsLeftHand, tempTargetEnemy),
                 });
             }
             else
