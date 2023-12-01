@@ -30,7 +30,7 @@ namespace MultiplayerARPG.OpsiveBT
         /// <returns></returns>
         public bool FindEnemyFunc()
         {
-            if (!Entity.TryGetTargetEntity(out IDamageableEntity targetEntity) || targetEntity.Entity == Entity.Entity || targetEntity.IsDead() || !targetEntity.CanReceiveDamageFrom(Entity.GetInfo()))
+            if (!Entity.TryGetTargetEntity(out IDamageableEntity targetEntity) || targetEntity.GetObjectId() == Entity.ObjectId || targetEntity.IsDead() || !targetEntity.CanReceiveDamageFrom(Entity.GetInfo()))
             {
                 bool isSummonedAndSummonerExisted = Entity.IsSummonedAndSummonerExisted;
                 // Find one enemy from previously found list
@@ -77,7 +77,7 @@ namespace MultiplayerARPG.OpsiveBT
             {
                 enemy = enemies.Value[i];
                 enemies.Value.RemoveAt(i);
-                if (enemy == null || enemy.Entity == Entity || enemy.IsDead() || !enemy.CanReceiveDamageFrom(Entity.GetInfo()))
+                if (enemy == null || enemy.ObjectId == Entity.ObjectId || enemy.IsDead() || !enemy.CanReceiveDamageFrom(Entity.GetInfo()))
                 {
                     // If enemy is null or cannot receive damage from monster, skip it
                     continue;
