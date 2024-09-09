@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -105,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -118,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -154,19 +153,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114313543944479198, guid: c26675f5ea04ade429c509dd5998a3a3,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &121885279
 Transform:
   m_ObjectHideFlags: 0
@@ -174,12 +180,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121885277}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 45, y: 0, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204423726
 GameObject:
@@ -211,19 +218,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114518637085851822, guid: 455e30131cbbabd4284e55f393264dfd, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114518637085851822, guid: 455e30131cbbabd4284e55f393264dfd,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &204423728
 Transform:
   m_ObjectHideFlags: 0
@@ -231,12 +244,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204423726}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &318696153
 GameObject:
@@ -268,19 +282,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114313543944479198, guid: c26675f5ea04ade429c509dd5998a3a3,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &318696155
 Transform:
   m_ObjectHideFlags: 0
@@ -288,12 +309,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318696153}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45, y: 0, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485262138
 GameObject:
@@ -326,6 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetMapInfo: {fileID: 11400000, guid: de8b0e4099f8d444692e88f92309e90d, type: 2}
   dimensionType: 0
+  widthAndHeight: 2048
+  depth: 24
   cullingMask:
     serializedVersion: 2
     m_Bits: 33
@@ -337,6 +361,8 @@ MonoBehaviour:
   makeByCollider: 1
   makeByCollider2D: 1
   makeByRenderer: 0
+  doNotDestroyCamera: 0
+  customCamera: {fileID: 0}
   create: 0
 --- !u!4 &485262140
 Transform:
@@ -345,12 +371,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485262138}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &512582180
 GameObject:
@@ -382,19 +409,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114107677553822186, guid: 2124e2e5e8dd2794ea8c8aff808d0096,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &512582182
 Transform:
   m_ObjectHideFlags: 0
@@ -402,12 +436,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512582180}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530859939
 GameObject:
@@ -439,19 +474,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114066747352953786, guid: a64a7bba0f24f83418b954ededaafad1, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114066747352953786, guid: a64a7bba0f24f83418b954ededaafad1,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &530859941
 Transform:
   m_ObjectHideFlags: 0
@@ -459,12 +500,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530859939}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &538751517
 GameObject:
@@ -496,19 +538,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114313543944479198, guid: c26675f5ea04ade429c509dd5998a3a3,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &538751519
 Transform:
   m_ObjectHideFlags: 0
@@ -516,12 +565,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538751517}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 45, y: 0, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540633066
 GameObject:
@@ -550,9 +600,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540633066}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &540633068
@@ -566,6 +624,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -574,7 +633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29aabbe420f18164897798c5b8c13a29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -611,79 +670,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540633066}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.9238796, w: -0.38268325}
   m_LocalPosition: {x: -8.2, y: 0, z: 15}
   m_LocalScale: {x: 10, y: 1, z: 5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 225}
---- !u!1 &556230129
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 556230132}
-  - component: {fileID: 556230131}
-  - component: {fileID: 556230130}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &556230130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556230129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &556230131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556230129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 5
---- !u!4 &556230132
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556230129}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &599135226
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +736,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -756,10 +752,10 @@ RectTransform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1904369586}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -771,11 +767,24 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4830784505616648, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830784505616648, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830784505616648, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830784505616648, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4830784505616648, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,61 +825,16 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
---- !u!1001 &647498037
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 131178, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 152208, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 411922, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2799e6cfaf283a84e883ca79ffce608e, type: 3}
 --- !u!1001 &688566479
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4488566216074206, guid: fbe9b355dd4e810409312de38efbae6e, type: 3}
@@ -926,6 +890,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 688566480}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbe9b355dd4e810409312de38efbae6e, type: 3}
 --- !u!114 &688566480 stripped
 MonoBehaviour:
@@ -969,19 +936,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114370047579736268, guid: a6965368e9bbec745905a65f29e97c61, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114370047579736268, guid: a6965368e9bbec745905a65f29e97c61,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &693699808
 Transform:
   m_ObjectHideFlags: 0
@@ -989,12 +962,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693699806}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &816987076
 GameObject:
@@ -1026,19 +1000,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114458248084136190, guid: 1f7bed1a355cf714bb94f7a8a9312ab3, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114458248084136190, guid: 1f7bed1a355cf714bb94f7a8a9312ab3,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &816987078
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,18 +1026,20 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816987076}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &862955970
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063516248811874, guid: 10a566787edb607449db3c80b1680477, type: 3}
@@ -1114,6 +1096,9 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a566787edb607449db3c80b1680477, type: 3}
 --- !u!1 &900542028
 GameObject:
@@ -1171,6 +1156,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
   directionalColor:
@@ -1200,6 +1186,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   directionalLight: {fileID: 1771843745}
@@ -1211,18 +1198,20 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900542028}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1044972932
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4870535873380002, guid: 22f0cf0a463913b4a8a22353449e9599, type: 3}
@@ -1273,6 +1262,9 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f0cf0a463913b4a8a22353449e9599, type: 3}
 --- !u!1 &1155664289
 GameObject:
@@ -1301,9 +1293,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155664289}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1155664291
@@ -1317,6 +1317,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1325,7 +1326,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29aabbe420f18164897798c5b8c13a29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1362,12 +1363,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155664289}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.92387956, w: 0.38268343}
   m_LocalPosition: {x: 8.2, y: 0, z: 15}
   m_LocalScale: {x: 10, y: 1, z: 5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
 --- !u!1 &1177040899
 GameObject:
@@ -1399,19 +1401,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114794387714781464, guid: 1bacf546a1ebd1a48a3e291e345648dc, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114794387714781464, guid: 1bacf546a1ebd1a48a3e291e345648dc,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &1177040901
 Transform:
   m_ObjectHideFlags: 0
@@ -1419,12 +1427,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177040899}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182412567
 GameObject:
@@ -1456,19 +1465,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114272027054039264, guid: 86c236f612381674e8f7c0793f0c47e7, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114272027054039264, guid: 86c236f612381674e8f7c0793f0c47e7,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &1182412569
 Transform:
   m_ObjectHideFlags: 0
@@ -1476,12 +1491,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182412567}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219726852
 GameObject:
@@ -1513,19 +1529,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114107677553822186, guid: 2124e2e5e8dd2794ea8c8aff808d0096,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &1219726854
 Transform:
   m_ObjectHideFlags: 0
@@ -1533,12 +1556,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219726852}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 45}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362995108
 GameObject:
@@ -1570,19 +1594,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114733814136463732, guid: c1474b77c0b0690409638bcf7e361f60, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114733814136463732, guid: c1474b77c0b0690409638bcf7e361f60,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &1362995110
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,12 +1620,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362995108}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1387910957
 GameObject:
@@ -1624,9 +1655,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387910957}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1387910959
@@ -1640,6 +1679,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1648,7 +1688,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 29aabbe420f18164897798c5b8c13a29, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1685,18 +1725,20 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387910957}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.375, z: 15}
   m_LocalScale: {x: 10, y: 1, z: 5}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1480405811
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4153003018256768, guid: b373e940929c0524389ddc911dd5875f, type: 3}
@@ -1747,7 +1789,116 @@ PrefabInstance:
       value: 1736350291
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b373e940929c0524389ddc911dd5875f, type: 3}
+--- !u!1 &1504977809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504977813}
+  - component: {fileID: 1504977812}
+  - component: {fileID: 1504977811}
+  - component: {fileID: 1504977810}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1504977810
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504977809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1504977811
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504977809}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 90869f91a5f63924e9c4808f1b1604ac, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1504977812
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504977809}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1504977813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504977809}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1400, y: 1, z: 1400}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624121358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,19 +1929,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114313543944479198, guid: c26675f5ea04ade429c509dd5998a3a3,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &1624121360
 Transform:
   m_ObjectHideFlags: 0
@@ -1798,18 +1956,20 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624121358}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45, y: 0, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1690197418
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1063516248811874, guid: 81b2b7696388d2f43930e896000ddb4a, type: 3}
@@ -1866,6 +2026,9 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81b2b7696388d2f43930e896000ddb4a, type: 3}
 --- !u!1 &1702870009
 GameObject:
@@ -1897,19 +2060,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114107677553822186, guid: 2124e2e5e8dd2794ea8c8aff808d0096,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &1702870011
 Transform:
   m_ObjectHideFlags: 0
@@ -1917,12 +2087,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702870009}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -45}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1743079193
 GameObject:
@@ -1954,19 +2125,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114533534088441710, guid: d8860f93c4697244083c881223bbd7a1, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114533534088441710, guid: d8860f93c4697244083c881223bbd7a1,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &1743079195
 Transform:
   m_ObjectHideFlags: 0
@@ -1974,12 +2151,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743079193}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771843744
 GameObject:
@@ -1991,6 +2169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771843746}
   - component: {fileID: 1771843745}
+  - component: {fileID: 1771843747}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2067,13 +2246,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771843744}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.061628457, y: 0.70441604, z: -0.70441604, w: 0.061628457}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1771843747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771843744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1778484298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,9 +2303,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778484298}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 45, y: 45, z: 45}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1778484300
@@ -2124,12 +2335,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778484298}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778830911
 GameObject:
@@ -2161,19 +2373,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114258226948392396, guid: d31640f88e399ff42a44b2bc82624fa0, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114258226948392396, guid: d31640f88e399ff42a44b2bc82624fa0,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &1778830913
 Transform:
   m_ObjectHideFlags: 0
@@ -2181,12 +2399,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778830911}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1787187641
 GameObject:
@@ -2218,19 +2437,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 0, b: 1, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 20
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114313543944479198, guid: eaec814eae0a071428850da042bd0a11, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  monsterCharacterEntity: {fileID: 114107677553822186, guid: 2124e2e5e8dd2794ea8c8aff808d0096,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  monsterCharacterEntity: {fileID: 0}
+  faction: {fileID: 0}
 --- !u!4 &1787187643
 Transform:
   m_ObjectHideFlags: 0
@@ -2238,12 +2464,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787187641}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 45, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811824525
 GameObject:
@@ -2275,17 +2502,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 0, g: 0.7490196, b: 0.64705884, a: 1}
+  gizmosHeight: 16
   type: 0
   randomRadius: 10
   squareSizeX: 0
   squareSizeZ: 0
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114999768898945974, guid: 7c23d14b14f07ef469532db8464907fa, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 10
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
+  respawnPendingEntitiesDelay: 5
 --- !u!4 &1811824527
 Transform:
   m_ObjectHideFlags: 0
@@ -2293,12 +2527,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811824525}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813609691
 GameObject:
@@ -2330,19 +2565,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gizmosColor: {r: 1, g: 1, b: 0, a: 1}
+  gizmosHeight: 16
   type: 1
   randomRadius: 100
   squareSizeX: 200
   squareSizeZ: 200
-  squareGizmosHeight: 5
+  groundFindingType: 0
   prefab: {fileID: 114784654274135856, guid: e6eb1c3ad21cb1747a3a93d01ec4147c, type: 3}
+  addressablePrefab:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+    hashAssetId: 0
   minLevel: 1
   maxLevel: 1
   amount: 15
-  respawnPendingEntitiesDelay: 5
   spawningPrefabs: []
-  harvestableEntity: {fileID: 114784654274135856, guid: e6eb1c3ad21cb1747a3a93d01ec4147c,
-    type: 3}
+  respawnPendingEntitiesDelay: 5
+  harvestableEntity: {fileID: 0}
 --- !u!4 &1813609693
 Transform:
   m_ObjectHideFlags: 0
@@ -2350,18 +2591,20 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813609691}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1832960846
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1291571781831874, guid: 8b22406824b00024b86496b4b35dc04a, type: 3}
@@ -2423,6 +2666,9 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b22406824b00024b86496b4b35dc04a, type: 3}
 --- !u!1 &1904369585
 GameObject:
@@ -2452,9 +2698,9 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 599135229}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2508,6 +2754,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4533935861194726475, guid: 6a60fdcb887d38c4fac14af1fb247cbc,
@@ -2581,4 +2828,47 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a60fdcb887d38c4fac14af1fb247cbc, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1771843746}
+  - {fileID: 1504977813}
+  - {fileID: 631853065}
+  - {fileID: 512582182}
+  - {fileID: 1787187643}
+  - {fileID: 1702870011}
+  - {fileID: 1219726854}
+  - {fileID: 318696155}
+  - {fileID: 121885279}
+  - {fileID: 538751519}
+  - {fileID: 1624121360}
+  - {fileID: 599135229}
+  - {fileID: 1044972932}
+  - {fileID: 1480405811}
+  - {fileID: 1690197418}
+  - {fileID: 862955970}
+  - {fileID: 3020054388346399556}
+  - {fileID: 1832960846}
+  - {fileID: 693699808}
+  - {fileID: 1743079195}
+  - {fileID: 1177040901}
+  - {fileID: 1362995110}
+  - {fileID: 1813609693}
+  - {fileID: 816987078}
+  - {fileID: 1182412569}
+  - {fileID: 530859941}
+  - {fileID: 1778830913}
+  - {fileID: 204423728}
+  - {fileID: 1778484301}
+  - {fileID: 688566479}
+  - {fileID: 540633070}
+  - {fileID: 1387910961}
+  - {fileID: 1155664293}
+  - {fileID: 1811824527}
+  - {fileID: 900542030}
+  - {fileID: 485262140}
