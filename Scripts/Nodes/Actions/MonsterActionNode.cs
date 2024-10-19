@@ -24,14 +24,16 @@ namespace MultiplayerARPG.OpsiveBT
 
         protected Transform GetDamageTransform()
         {
-            return queueSkill.Value != null ? queueSkill.Value.GetApplyTransform(Entity, isLeftHandAttacking.Value) :
-                Entity.GetWeaponDamageInfo(null).GetDamageTransform(Entity, isLeftHandAttacking.Value);
+            bool isLeftHand = isLeftHandAttacking.Value;
+            return queueSkill.Value != null ? queueSkill.Value.GetApplyTransform(Entity, isLeftHand) :
+                Entity.GetAvailableWeaponDamageInfo(ref isLeftHand).GetDamageTransform(Entity, isLeftHand);
         }
 
         protected float GetAttackDistance()
         {
-            return queueSkill.Value != null && queueSkill.Value.IsAttack ? queueSkill.Value.GetCastDistance(Entity, queueSkillLevel.Value, isLeftHandAttacking.Value) :
-                Entity.GetAttackDistance(isLeftHandAttacking.Value);
+            bool isLeftHand = isLeftHandAttacking.Value;
+            return queueSkill.Value != null && queueSkill.Value.IsAttack ? queueSkill.Value.GetCastDistance(Entity, queueSkillLevel.Value, isLeftHand) :
+                Entity.GetAttackDistance(isLeftHand);
         }
 
         protected bool OverlappedEntity<T>(T entity, Vector3 measuringPosition, Vector3 targetPosition, float distance)
