@@ -45,7 +45,7 @@ namespace MultiplayerARPG.OpsiveBT
             if (queueSkill.Value != null && Entity.IndexOfSkillUsage(SkillUsageType.Skill, queueSkill.Value.DataId) < 0)
             {
                 // Use skill when there is queue skill or randomed skill that can be used
-                Entity.UseSkill(queueSkill.Value.DataId, false, 0, new AimPosition()
+                Entity.UseSkill(queueSkill.Value.DataId, WeaponHandlingState.None, 0, new AimPosition()
                 {
                     type = AimPositionType.Position,
                     position = queueSkill.Value.GetDefaultAttackAimPosition(Entity, queueSkillLevel.Value, tempIsLeftHand, tempTargetEnemy),
@@ -54,8 +54,8 @@ namespace MultiplayerARPG.OpsiveBT
             else
             {
                 // Attack when no queue skill
-                bool isLeftHand = false;
-                Entity.Attack(ref isLeftHand);
+                WeaponHandlingState weaponHandlingState = WeaponHandlingState.None;
+                Entity.Attack(ref weaponHandlingState);
             }
 
             didAction = true;
