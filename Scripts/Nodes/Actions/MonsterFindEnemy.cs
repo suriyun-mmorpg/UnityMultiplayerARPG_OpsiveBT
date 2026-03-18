@@ -46,7 +46,7 @@ namespace MultiplayerARPG.OpsiveBT
                 {
                     // Find enemy around summoner
                     enemies.Value.AddRange(Entity.FindAliveEntities<DamageableEntity>(
-                        Entity.Summoner.EntityTransform.position,
+                        Entity.SummonerEntity.EntityTransform.position,
                         CharacterDatabase.SummonedVisualRange,
                         false, /* Don't find an allies */
                         true,  /* Find an enemies */
@@ -82,7 +82,7 @@ namespace MultiplayerARPG.OpsiveBT
                     // If enemy is null or cannot receive damage from monster, skip it
                     continue;
                 }
-                if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.Summoner.Id == buildingEntity.CreatorId)
+                if (isAttackBuilding && isSummonedAndSummonerExisted && enemy is BuildingEntity buildingEntity && Entity.SummonerEntity.Id == buildingEntity.CreatorId)
                 {
                     // If building was built by summoner, skip it
                     continue;

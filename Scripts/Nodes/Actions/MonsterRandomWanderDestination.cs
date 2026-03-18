@@ -17,10 +17,10 @@ namespace MultiplayerARPG.OpsiveBT
         public override TaskStatus OnUpdate()
         {
             // Random position around summoner or around spawn point
-            if (Entity.Summoner != null)
+            if (Entity.SummonerEntity != null)
             {
                 // Random position around summoner
-                moveToPosition.Value = CurrentGameInstance.GameplayRule.GetSummonPosition(Entity.Summoner);
+                moveToPosition.Value = CurrentGameInstance.GameplayRule.GetSummonPosition(Entity.SummonerEntity);
             }
             else
             {
