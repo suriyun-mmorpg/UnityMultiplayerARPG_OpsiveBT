@@ -45,22 +45,24 @@ namespace MultiplayerARPG.OpsiveBT
                 if (isSummonedAndSummonerExisted)
                 {
                     // Find enemy around summoner
-                    enemies.Value.AddRange(Entity.FindAliveEntities<DamageableEntity>(
+                    Entity.FindAliveEntities(
+                        enemies.Value,
                         Entity.SummonerEntity.EntityTransform.position,
                         CharacterDatabase.SummonedVisualRange,
                         false, /* Don't find an allies */
                         true,  /* Find an enemies */
                         true,  /* Find an neutral */
-                        overlapMask));
+                        overlapMask);
                 }
                 else
                 {
-                    enemies.Value.AddRange(Entity.FindAliveEntities<DamageableEntity>(
+                    Entity.FindAliveEntities(
+                        enemies.Value,
                         CharacterDatabase.VisualRange,
                         false, /* Don't find an allies */
                         true,  /* Find an enemies */
                         false, /* Don't find an neutral */
-                        overlapMask));
+                        overlapMask);
                 }
                 // Find one enemy from a found list
                 if (FindOneEnemyFromList(isSummonedAndSummonerExisted))
